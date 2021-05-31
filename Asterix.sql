@@ -153,7 +153,4 @@ WHERE `NbHuttes` >= ALL (SELECT `NbHuttes` FROM `village`);
 30.SELECT `Nom` FROM `habitant` H, `trophee` T 
 WHERE H.`NumHab` = T.`NumPreneur` 
 GROUP BY H.`Nom` 
-HAVING COUNT(`Nom`) > (SELECT COUNT(*) 
-						FROM `trophee` TR, `habitant` HA 
-						WHERE HA.`NumHab` = TR.`NumPreneur` 
-						AND HA.`Nom` = "Obélix")
+HAVING COUNT(`Nom`) > (SELECT COUNT(*) FROM `trophee` TR, `habitant` HA WHERE HA.`NumHab` = TR.`NumPreneur` AND HA.`Nom` = "Obélix")
